@@ -1,0 +1,22 @@
+version: "3"
+
+services:
+  dind:
+    image: ellermister/dind 
+    build: .
+    privileged: true
+    volumes:
+      #- /mnt/user/appdata/dind/docker:/var/lib/docker
+      - /mnt/disk4/appdata/mydind/docker:/var/lib/docker
+      #- ./docker:/var/lib/docker
+      - /mnt/user/projects/web:/web
+      - ./ssh:/root/.ssh
+      - ./vscode-server:/root/.vscode-server
+      #- ./data:/var/lib/docker
+    ports:
+      - "2022:2022"
+    #network_mode: host
+    environment:
+      USER: dind
+      PASSWORD: dind
+
