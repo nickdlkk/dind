@@ -25,5 +25,6 @@ RUN curl -fsSL https://get.docker.com -o get-docker.sh && sh get-docker.sh \
 	&& chmod +x /usr/bin/docker-compose 
 
 COPY files /
+RUN chmod +x /docker-entrypoint.sh
 EXPOSE 22
 ENTRYPOINT ["/docker-entrypoint.sh"]
