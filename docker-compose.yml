@@ -5,15 +5,13 @@ services:
     image: nickdlk/dind 
     build: .
     privileged: true
-    container_name: dind
     volumes:
       - /usr/dind/docker:/var/lib/docker:Z
       - /root/projects/web:/web:Z
-      - ./ssh:/root/.ssh:Z
-      - ./vscode-server:/root/.vscode-server:Z
+      - ./ssh:/home/${USER}/.ssh:Z
+      - ./vscode-server:/home/${USER}/.vscode-server:Z
     ports:
       - "2022:2022"
     environment:
       USER: dind
       PASSWORD: dind
-
