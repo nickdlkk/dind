@@ -30,6 +30,7 @@ chmod 600 /home/$USER/.ssh/id_rsa
 chmod 644 /home/$USER/.ssh/id_rsa.pub
 chmod 600 /home/$USER/.ssh/authorized_keys
 chown -R $USER:docker /home/$USER/.vscode-server
+chown -R $USER:docker /home/$USER
 
 # 将公钥添加到 authorized_keys
 cat /home/$USER/.ssh/id_rsa.pub >> /home/$USER/.ssh/authorized_keys
